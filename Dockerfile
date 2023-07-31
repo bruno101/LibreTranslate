@@ -2,6 +2,8 @@ FROM python:3.10.10-slim-bullseye as builder
 
 WORKDIR /app
 
+ENV LT_LOAD_ONLY="pt,en"
+
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq \
   && apt-get -qqq install --no-install-recommends -y pkg-config gcc g++ \
